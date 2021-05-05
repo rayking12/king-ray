@@ -1,5 +1,5 @@
-import {Component} from 'react'
-import List from "./List"
+import { Component } from "react";
+import List from "./List";
 
 class App extends Component {
   constructor(props) {
@@ -19,23 +19,17 @@ class App extends Component {
     const newItem = document.getElementById("addInput");
     const form = document.getElementById("addItemForm");
 
-    // If our input has a value
     if (newItem.value != "") {
-      // Add the new item to the end of our list array
       list.push(newItem.value);
-      // Then we use that to set the state for list
       this.setState({
         list: list
       });
-      // Finally, we need to reset the form
       newItem.classList.remove("is-danger");
       form.reset();
     } else {
-      // If the input doesn't have a value, make the border red since it's required
       newItem.classList.add("is-danger");
     }
   }
-
 
   render() {
     return (
@@ -64,4 +58,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
